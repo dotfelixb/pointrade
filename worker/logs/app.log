@@ -1,0 +1,89 @@
+[2024-06-02T07:04:12.750Z] info: server running at http://localhost:
+[2024-06-02T07:04:27.484Z] info: worker running at http://localhost:
+[2024-06-02T07:40:06.709Z] info: worker running at http://localhost:
+[2024-06-02T07:40:25.077Z] info: worker running at http://localhost:
+[2024-06-02T07:40:52.801Z] info: worker running at http://localhost:
+[2024-06-02T07:41:39.219Z] info: worker running at http://localhost:
+[2024-06-02T07:42:13.970Z] info: worker running at http://localhost:
+[2024-06-02T07:43:55.259Z] info: worker running at http://localhost:
+[2024-06-02T07:44:25.351Z] info: worker running at http://localhost:
+[2024-06-02T07:45:15.708Z] info: worker running at http://localhost:
+[2024-06-02T07:45:25.277Z] info: worker running at http://localhost:
+[2024-06-02T07:47:20.309Z] info: email sent to [object Object]
+[2024-06-02T07:48:01.678Z] info: worker running at http://localhost:
+[2024-06-02T07:49:56.279Z] info: worker running at http://localhost:
+[2024-06-02T07:50:16.240Z] info: worker running at http://localhost:
+[2024-06-02T07:50:57.295Z] info: worker running at http://localhost:
+[2024-06-02T07:51:04.417Z] info: worker running at http://localhost:
+[2024-06-02T07:51:19.081Z] info: email sent to [object Object]
+[2024-06-02T07:51:58.793Z] info: worker running at http://localhost:
+[2024-06-02T07:52:10.272Z] info: email sent to [object Object]
+[2024-06-02T07:52:50.987Z] info: worker running at http://localhost:
+[2024-06-02T07:52:51.022Z] info: email sent to [object Object]
+[2024-06-02T07:53:06.988Z] info: worker running at http://localhost:
+[2024-06-02T07:53:07.019Z] info: email sent to [object Object]
+[2024-06-02T07:53:37.409Z] info: worker running at http://localhost:
+[2024-06-02T07:53:37.439Z] info: email sent to [object Object]
+[2024-06-02T07:54:05.114Z] info: worker running at http://localhost:
+[2024-06-02T07:54:05.173Z] info: email sent to [object Object]
+[2024-06-02T07:55:06.432Z] info: worker running at http://localhost:
+[2024-06-02T07:55:06.461Z] info: email sent to {"email":"okay@email.com","token":"1020"}
+[2024-06-02T08:06:11.165Z] info: worker running at http://localhost:
+[2024-06-02T08:06:11.195Z] info: email sent to [object Object]
+[2024-06-02T08:06:24.129Z] info: worker running at http://localhost:
+[2024-06-02T08:06:24.158Z] info: email sent to okay@email.com
+[2024-06-02T08:56:12.227Z] info: worker running at http://localhost:
+[2024-06-02T08:56:12.259Z] info: email sent to okay@email.com
+[2024-06-02T08:57:52.742Z] info: worker running at http://localhost:
+[2024-06-02T08:57:52.783Z] info: email sent to okay@email.com
+[2024-06-02T08:58:09.374Z] info: worker running at http://localhost:
+[2024-06-02T08:58:09.517Z] info: email sent to okay@email.com
+[2024-06-02T08:58:31.358Z] info: worker running at http://localhost:
+[2024-06-02T08:58:31.419Z] info: email sent to okay@email.com
+[2024-06-02T08:52:01.354Z] info: worker running at http://localhost:
+[2024-06-02T08:52:01.384Z] info: email sent to okay@email.com
+[2024-06-02T08:53:03.672Z] info: worker running at http://localhost:
+[2024-06-02T08:53:03.704Z] info: email sent to okay@email.com
+[2024-06-02T09:09:33.561Z] info: worker running at http://localhost:
+[2024-06-02T09:09:33.606Z] info: email sent to okay@email.com
+[2024-06-02T09:12:25.518Z] info: worker running at http://localhost:
+[2024-06-02T09:12:25.551Z] info: email sent to okay@email.com
+[2024-06-02T09:13:36.402Z] info: worker running at http://localhost:
+[2024-06-02T09:13:36.434Z] info: email sent to okay@email.com
+[2024-06-02T09:16:14.334Z] info: worker running at http://localhost:
+[2024-06-02T09:16:14.363Z] info: email sent to okay@email.com
+[2024-06-02T09:16:44.838Z] info: worker running at http://localhost:
+[2024-06-02T09:16:44.870Z] info: email sent to okay@email.com
+[2024-06-02T09:16:57.877Z] info: worker running at http://localhost:
+[2024-06-02T09:16:57.906Z] info: email sent to okay@email.com
+[2024-06-02T09:23:20.887Z] info: worker running at http://localhost:
+[2024-06-02T09:23:20.917Z] info: email sent to okay@email.com
+[2024-06-02T09:33:39.549Z] info: email sent to okay@email.com
+[2024-06-02T09:34:16.228Z] info: worker running at http://localhost:
+[2024-06-02T09:34:16.273Z] info: email sent to okay@email.com
+[2024-06-02T09:34:16.274Z] info: email sent to okay@email.com
+[2024-06-02T09:36:08.719Z] info: worker running at http://localhost:
+[2024-06-02T09:39:57.576Z] info: worker running at http://localhost:
+[2024-06-02T09:40:13.327Z] info: worker running at http://localhost:
+[2024-06-02T09:40:41.847Z] info: worker running at http://localhost:
+[2024-06-02T09:41:06.370Z] info: worker running at http://localhost:
+[2024-06-02T09:41:10.786Z] info: worker running at http://localhost:
+[2024-06-02T09:42:31.418Z] info: worker running at http://localhost:
+[2024-06-02T09:43:06.670Z] info: worker running at http://localhost:
+[2024-06-02T09:43:42.856Z] info: worker running at http://localhost:
+[2024-06-02T09:44:38.169Z] info: worker running at http://localhost:
+[2024-06-02T09:44:38.202Z] info: creating wallets for 01HZC4R8RV5WBVRY3EFSBH7AGR
+[2024-06-02T09:45:50.722Z] info: worker running at http://localhost:
+[2024-06-02T09:45:50.757Z] info: creating wallets for 01HZC4R8RV5WBVRY3EFSBH7AGR
+[2024-06-02T09:45:50.797Z] info: creating wallets for 01HZC4R8RV5WBVRY3EFSBH7AGR
+[2024-06-02T09:45:50.798Z] info: wallet created for 01HZC4R8RV5WBVRY3EFSBH7AGR
+[2024-06-02T09:47:53.599Z] info: worker running at http://localhost:
+[2024-06-02T09:47:53.633Z] info: creating wallets for 01HZC4R8RV5WBVRY3EFSBH7AGR
+[2024-06-02T09:47:53.672Z] info: creating wallets for 01HZC4R8RV5WBVRY3EFSBH7AGR
+[2024-06-02T09:47:53.673Z] info: wallet created for 01HZC4R8RV5WBVRY3EFSBH7AGR
+[2024-06-02T09:48:29.564Z] info: worker running at http://localhost:
+[2024-06-02T09:48:34.359Z] info: worker running at http://localhost:
+[2024-06-02T09:49:04.548Z] info: wallet created for 01HZC4R8RV5WBVRY3EFSBH7AGR
+[2024-06-02T09:49:55.244Z] info: worker running at http://localhost:
+[2024-06-02T09:51:44.434Z] info: worker running at http://localhost:
+[2024-06-02T09:51:47.196Z] info: wallet created for 01HZC4R8RV5WBVRY3EFSBH7AGR
