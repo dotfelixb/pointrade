@@ -4,10 +4,11 @@ import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import winston from "winston";
 import {
-  processTransactionQueue,
+  transactionQueueProcess,
   reverseTransactionQueue,
   verificationEmailQueue,
   walletQueueProcess,
+  balanceQueueProcess,
 } from "./process";
 
 dotenv.config();
@@ -26,6 +27,7 @@ const verifyQueue = process.env.VERIFY_EMAIL_QUEUE;
 const processQueue = process.env.PROCESS_QUEUE;
 const reverseQueue = process.env.REVERSE_QUEUE;
 const walletQueue = process.env.WALLET_QUEUE;
+const balanceQueue = process.env.BALANCE_QUEUE;
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -54,22 +56,38 @@ const logger = winston.createLogger({
 
   const verifyChannel = await amqpConnection.createChannel();
   verifyChannel.assertQueue(verifyQueue!, { durable: true });
-  verifyChannel.consume(verifyQueue!, async (data) => { 
-    
+  verifyChannel.consume(verifyQueue!, async (data) => {
     const result = await verificationEmailQueue(logger, data?.content);
 
-    if(result) {
-        verifyChannel.ack(data!);
+    if (result) {
+      verifyChannel.ack(data!);
     }
   });
 
   const walletChannel = await amqpConnection.createChannel();
   walletChannel.assertQueue(walletQueue!, { durable: true });
   walletChannel.consume(walletQueue!, async (data) => {
-
     const result = await walletQueueProcess(logger, data?.content);
-    if(result) {
-        walletChannel.ack(data!);
+    if (result) {
+      walletChannel.ack(data!);
+    }
+  });
+
+  const processChannel = await amqpConnection.createChannel();
+  processChannel.assertQueue(processQueue!, { durable: true });
+  processChannel.consume(processQueue!, async (data) => {
+    const result = await transactionQueueProcess(logger, data?.content);
+    if (result) {
+      processChannel.ack(data!);
+    }
+  });
+
+  const balanceChannel = await amqpConnection.createChannel();
+  balanceChannel.assertQueue(balanceQueue!, { durable: true });
+  balanceChannel.consume(balanceQueue!, async (data) => {
+    const result = await balanceQueueProcess(logger, data?.content);
+    if (result) {
+      balanceChannel.ack(data!);
     }
   });
 })();

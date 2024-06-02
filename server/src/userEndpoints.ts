@@ -8,8 +8,7 @@ import { sendToEmailQueue, sendToWalletQueue } from "./utils/mq";
 
 dotenv.config();
 
-const jwtSecret = process.env.JWT_SECRET as string;
-const amqp_url = process.env.AMQP_URL;
+const jwtSecret = process.env.JWT_SECRET as string; 
 
 export async function verifyEmailEndpoint(req: Request, res: Response) {
   const { email, token } = req.query as UserVerify;

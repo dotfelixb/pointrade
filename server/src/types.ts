@@ -27,3 +27,11 @@ export type AuthenticationToken  = {
     userId: string;
     username: string;
 }
+
+export type WalletDeposit = {
+  userid: string;
+  currencyid: string;
+  issuedkey: string;
+  rate: number;
+  amount: number;
+};
