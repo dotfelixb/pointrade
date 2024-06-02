@@ -3,6 +3,7 @@ import winston from "winston";
 import { createUserEndpoint, loginEndpoint, verifyEmailEndpoint } from "./userEndpoints";
 import { useAlreadyVerified } from "./middlewares/alreadyVerified";
 import { walletDepositEndpoint, walletSendEndpoint } from "./walletEndpoints";
+import { useCanSend } from "./middlewares/canSend";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -35,7 +36,7 @@ app.post("/user.token", loginEndpoint);
 
 // wallet endpoints
 app.post("/wallet.deposit", walletDepositEndpoint);
-app.post("/wallet.send", walletSendEndpoint);
+app.post("/wallet.send", useCanSend, walletSendEndpoint);
 
 app.listen(port, () => {
   logger.log("info", `server running at http://localhost:`, port);

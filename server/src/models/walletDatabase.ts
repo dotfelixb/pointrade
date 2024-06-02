@@ -70,4 +70,18 @@ export const createSend = async (
   return result.rows[0] || null;
 };
 
-
+export const checkIssuerBalance = async (
+  issuerid: string,
+  issuercurrencyid: string,
+  amount: number
+): Promise<boolean> => {
+  const result = await pool.query(
+    `SELECT 1
+    FROM trade.wallets w
+    WHERE w.userid = $1
+    AND w.currencyid = $2
+    AND w.balance > $3`,
+    [issuerid, issuercurrencyid, amount]
+  );
+  return (result.rowCount ?? 0) > 0;
+};
