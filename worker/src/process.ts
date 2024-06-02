@@ -1,4 +1,4 @@
-import winston, { Logger } from "winston";
+import { Logger } from "winston";
 import { createWallet } from "./models/userDatabase";
 import {
   createTransactionLegs,

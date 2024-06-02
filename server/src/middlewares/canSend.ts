@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-import { UserVerify, WalletSend } from "../types";
-import { checkEmailVerified } from "../models/userDatabase";
+import { WalletSend } from "../types";
 import { checkIssuerBalance } from "../models/walletDatabase";
 
 export const useCanSend = async (

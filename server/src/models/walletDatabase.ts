@@ -1,6 +1,6 @@
 import { ulid } from "ulid";
 import pool from "../utils/db";
-import { DatabaseUser, WalletDeposit, WalletSend } from "../types";
+import { WalletDeposit, WalletSend } from "../types";
 
 export const isUniqueIssuedKey = async (
   issuedkey: string

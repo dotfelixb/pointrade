@@ -1,6 +1,4 @@
-import { ulid } from "ulid";
 import pool from "../utils/db";
-import { Logger } from "winston";
 
 export const createWallet = async (userId: string): Promise<number> => {
   // by default users have 4 wallets

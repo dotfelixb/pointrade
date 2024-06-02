@@ -1,6 +1,4 @@
-import { ulid } from "ulid";
 import pool from "../utils/db";
-import { Logger } from "winston";
 
 export const balanceWallet = async (
   userid: string,

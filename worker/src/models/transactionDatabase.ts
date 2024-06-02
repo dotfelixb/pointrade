@@ -1,6 +1,4 @@
-import { ulid } from "ulid";
 import pool from "../utils/db";
-import { Logger } from "winston";
 import { WalletTransaction } from "../types";
 
 export const getTransactionById = async (

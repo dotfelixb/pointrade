@@ -3,7 +3,11 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import { AuthenticationToken, UserRegister, UserVerify } from "./types";
-import { createUser, findUserByEmail, findUserByUsername, verifyUserEmail } from "./models/userDatabase";
+import {
+  createUser,
+  findUserByUsername,
+  verifyUserEmail,
+} from "./models/userDatabase";
 import { sendToEmailQueue, sendToWalletQueue } from "./utils/mq";
 
 dotenv.config();
