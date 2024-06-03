@@ -22,6 +22,12 @@ export type UserToken = {
   password: string;
 };
 
+export type UserLogin = {
+  email?: string;
+  username?: string;
+  password: string;
+};
+
 export type AuthenticationToken = {
   userId: string;
   username: string;
@@ -43,4 +49,9 @@ export type WalletSend = {
   issuedkey: string;
   rate: number;
   amount: number;
+};
+
+export type WalletBalance = {
+  balance: number;
+  balanceat: Date;
 };

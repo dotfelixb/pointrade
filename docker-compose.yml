@@ -34,48 +34,48 @@ services:
     volumes:
       - rabbitmq-data:/var/lib/rabbitmq  
 
-  server:
-    build:
-      context: ./server
-    ports:
-      - "3000:3000"
-    environment:
-      - PORT=3000
-      - LOG_LEVEL=info
-      - DATABASE_URL=postgresql://postgres:password@postgres:5432/pointtrade
-      - AMQP_URL=amqp://user:password@rabbitmq
-      - VERIFY_EMAIL_QUEUE=verification.email
-      - WALLET_QUEUE=wallet.create
-      - PROCESS_QUEUE=transaction.process
-      - REVERSE_QUEUE=transaction.reverse
-      - JWT_SECRET=kjgjhgSetrer25fsdhgfAhbjhgf!g8
-    depends_on:
-      rabbitmq:
-        condition: service_healthy
-      postgres:
-        condition: service_healthy
+  # server:
+  #   build:
+  #     context: ./server
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - PORT=3000
+  #     - LOG_LEVEL=info
+  #     - DATABASE_URL=postgresql://postgres:password@postgres:5432/pointtrade
+  #     - AMQP_URL=amqp://user:password@rabbitmq
+  #     - VERIFY_EMAIL_QUEUE=verification.email
+  #     - WALLET_QUEUE=wallet.create
+  #     - PROCESS_QUEUE=transaction.process
+  #     - REVERSE_QUEUE=transaction.reverse
+  #     - JWT_SECRET=kjgjhgSetrer25fsdhgfAhbjhgf!g8
+  #   depends_on:
+  #     rabbitmq:
+  #       condition: service_healthy
+  #     postgres:
+  #       condition: service_healthy
 
-  worker:
-    build:
-      context: ./worker
-    ports:
-      - "4000:4000"
-    environment:
-      - PORT=4000
-      - LOG_LEVEL=info
-      - DATABASE_URL=postgresql://postgres:password@postgres:5432/pointtrade
-      - AMQP_URL=amqp://user:password@rabbitmq
-      - VERIFY_EMAIL_QUEUE=verification.email
-      - WALLET_QUEUE=wallet.create
-      - PROCESS_QUEUE=transaction.process
-      - REVERSE_QUEUE=transaction.reverse
-      - BALANCE_QUEUE=wallet.balance
-      - JWT_SECRET=kjgjhgSetrer25fsdhgfAhbjhgf!g8
-    depends_on:
-      rabbitmq:
-        condition: service_healthy
-      postgres:
-        condition: service_healthy
+  # worker:
+  #   build:
+  #     context: ./worker
+  #   ports:
+  #     - "4000:4000"
+  #   environment:
+  #     - PORT=4000
+  #     - LOG_LEVEL=info
+  #     - DATABASE_URL=postgresql://postgres:password@postgres:5432/pointtrade
+  #     - AMQP_URL=amqp://user:password@rabbitmq
+  #     - VERIFY_EMAIL_QUEUE=verification.email
+  #     - WALLET_QUEUE=wallet.create
+  #     - PROCESS_QUEUE=transaction.process
+  #     - REVERSE_QUEUE=transaction.reverse
+  #     - BALANCE_QUEUE=wallet.balance
+  #     - JWT_SECRET=kjgjhgSetrer25fsdhgfAhbjhgf!g8
+  #   depends_on:
+  #     rabbitmq:
+  #       condition: service_healthy
+  #     postgres:
+  #       condition: service_healthy
 
 volumes:
   postgres-data:

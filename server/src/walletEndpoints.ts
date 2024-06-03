@@ -5,10 +5,19 @@ import {
   createDeposit,
   createSend,
   isUniqueIssuedKey,
+  walletBalance,
 } from "./models/walletDatabase";
 import { sendToProcessQueue } from "./utils/mq";
 
 dotenv.config();
+
+export async function walletBalanceEndpoint(req: Request, res: Response) {
+  const { userid, currencyid } = req.body;
+  const result = await walletBalance(userid, currencyid);
+  console.log(result);
+
+  return res.status(200).json(result);
+}
 
 export async function walletDepositEndpoint(req: Request, res: Response) {
   const body: WalletDeposit = req.body;

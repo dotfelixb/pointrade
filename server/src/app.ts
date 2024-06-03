@@ -1,9 +1,19 @@
 import express, { Request, Response } from "express";
 import winston from "winston";
-import { createUserEndpoint, loginEndpoint, verifyEmailEndpoint } from "./userEndpoints";
+import {
+  createUserEndpoint,
+  getUserEndpoint,
+  loginEndpoint,
+  verifyEmailEndpoint,
+} from "./userEndpoints";
 import { useAlreadyVerified } from "./middlewares/alreadyVerified";
-import { walletDepositEndpoint, walletSendEndpoint } from "./walletEndpoints";
+import {
+  walletBalanceEndpoint,
+  walletDepositEndpoint,
+  walletSendEndpoint,
+} from "./walletEndpoints";
 import { useCanSend } from "./middlewares/canSend";
+import { useAuthenticationToken } from "./middlewares/authMiddleware";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -30,13 +40,20 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // user endpoints
+app.get("/user.get", useAuthenticationToken, getUserEndpoint);
 app.get("/user.verify", useAlreadyVerified, verifyEmailEndpoint);
 app.post("/user.register", createUserEndpoint);
 app.post("/user.token", loginEndpoint);
 
 // wallet endpoints
-app.post("/wallet.deposit", walletDepositEndpoint);
-app.post("/wallet.send", useCanSend, walletSendEndpoint);
+app.post("/wallet.balance", useAuthenticationToken, walletBalanceEndpoint);
+app.post("/wallet.deposit", useAuthenticationToken, walletDepositEndpoint);
+app.post(
+  "/wallet.send",
+  useAuthenticationToken,
+  useCanSend,
+  walletSendEndpoint
+);
 
 app.listen(port, () => {
   logger.log("info", `server running at http://localhost:`, port);

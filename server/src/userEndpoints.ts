@@ -2,9 +2,15 @@ import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import { AuthenticationToken, UserRegister, UserVerify } from "./types";
+import {
+  AuthenticationToken,
+  UserLogin,
+  UserRegister,
+  UserVerify,
+} from "./types";
 import {
   createUser,
+  findUserByEmail,
   findUserByUsername,
   verifyUserEmail,
 } from "./models/userDatabase";
@@ -12,11 +18,30 @@ import { sendToEmailQueue, sendToWalletQueue } from "./utils/mq";
 
 dotenv.config();
 
-const jwtSecret = process.env.JWT_SECRET as string; 
+const jwtSecret = process.env.JWT_SECRET as string;
+
+export async function getUserEndpoint(req: Request, res: Response) {
+  const { username, email } = req.query as UserLogin;
+  if (!username && !email) {
+    return res.status(400).json({ message: "Username or Email is required" });
+  }
+
+  const user =
+    username !== null
+      ? await findUserByUsername(username!)
+      : email !== null
+      ? await findUserByEmail(email!)
+      : null;
+
+  if (!user) {
+    return res.status(400).json({ message: "User not found" });
+  }
+
+  return res.status(200).json(user);
+}
 
 export async function verifyEmailEndpoint(req: Request, res: Response) {
   const { email, token } = req.query as UserVerify;
-  // TODO : get token from query 
   var user = await verifyUserEmail(email);
   if (!user) {
     return res.status(400).json({ message: "User not found" });

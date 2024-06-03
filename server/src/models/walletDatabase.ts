@@ -1,6 +1,6 @@
 import { ulid } from "ulid";
 import pool from "../utils/db";
-import { WalletDeposit, WalletSend } from "../types";
+import { WalletBalance, WalletDeposit, WalletSend } from "../types";
 
 export const isUniqueIssuedKey = async (
   issuedkey: string
@@ -84,4 +84,15 @@ export const checkIssuerBalance = async (
     [issuerid, issuercurrencyid, amount]
   );
   return (result.rowCount ?? 0) > 0;
+};
+
+export const walletBalance = async (
+  userid: string,
+  currencyid: string
+): Promise<WalletBalance> => {
+  const result = await pool.query(
+    `SELECT balance, balanceat FROM trade.wallets WHERE userid = $1 AND currencyid = $2`,
+    [userid, currencyid]
+  );
+  return result.rows[0];
 };
