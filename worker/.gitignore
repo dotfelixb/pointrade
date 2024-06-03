@@ -3,6 +3,8 @@
 /logs
 *.log
 
+/dist
+
 # dependencies
 /node_modules
 /.pnp
