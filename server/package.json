@@ -1,12 +1,12 @@
 {
-  "name": "pointtrade",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
-    "serve": "node dist/index.js"
+    "serve": "node dist/app.js"
   },
   "keywords": [],
   "author": "",

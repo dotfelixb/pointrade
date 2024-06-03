@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 import winston from "winston";
 import {
   transactionQueueProcess,
-  reverseTransactionQueue,
   verificationEmailQueue,
   walletQueueProcess,
   balanceQueueProcess,
@@ -30,7 +29,7 @@ const walletQueue = process.env.WALLET_QUEUE;
 const balanceQueue = process.env.BALANCE_QUEUE;
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 const logger = winston.createLogger({
   level: process.env.LOG_LEVEL || "info",
   // Use timestamp and printf to create a standard log format
