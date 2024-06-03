@@ -3,7 +3,7 @@
 /logs
 *.log
 
-/server/dist
+/dist
 
 # dependencies
 /node_modules
